@@ -45,7 +45,7 @@ router.post('/auth-phone', async (req, res) => {
           await connection.end();
           const res = {
             error: true,
-            message: "Erro, Onu já provisionada!"
+            message: "Erro, Não foi possível provisionar"
           }
           return res
 
