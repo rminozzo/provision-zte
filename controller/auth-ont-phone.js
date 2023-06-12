@@ -15,8 +15,8 @@ router.post('/auth-phone', async (req, res) => {
         port: 23,
         shellPrompt: '>', // or negotiationMandatory: false
         timeout: 1500,
-        username: process.env.USERNAME,
-        password: process.env.PASSWORD
+        username: process.env.USER_NAME,
+        password: process.env.PASS
       };
   
       try {
