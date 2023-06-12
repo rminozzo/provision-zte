@@ -11,12 +11,12 @@ router.post('/auth-bridge', async (req, res) => {
       const connection = new Telnet()
   
       const params = {
-        host: '172.29.247.214',
+        host: process.env.HOST,
         port: 23,
         shellPrompt: '>', // or negotiationMandatory: false
         timeout: 1500,
-        username: 'administrador',
-        password: 'T4m4nho@1012'
+        username: process.env.USERNAME,
+        password: process.env.PASSWORD
       };
   
       try {
