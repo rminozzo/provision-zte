@@ -25,7 +25,6 @@ router.post('/auth-bridge', async (req, res) => {
         await connection.send(params.username + '\n' + params.password);
         await connection.send('enable' + '\n');
         await connection.write('config' + '\n' + `interface gpon 0/${dados.slot}` + '\n');
-  
         const response = await connection.send(`ont confirm ${dados.pon} sn-auth ${dados.sn} omci ont-lineprofile-id 200 ont-srvprofile-id 200 desc "${dados.nome}"` + '\n\n');
         const res = response.split('\n');
         function getOnuId() {
